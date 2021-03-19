@@ -35,7 +35,7 @@ public class BookServiceImpl implements BookSeriver {
     }
 
     @Override
-    public List<Books> findAll() {
-        return bookMapper.findAll();
+    public List<Books> findAll(Books books) {
+        return bookMapper.findAll(books);
     }
 }

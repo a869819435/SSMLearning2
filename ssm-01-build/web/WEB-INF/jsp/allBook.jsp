@@ -31,6 +31,14 @@
         <div class="col-md-4 column">
             <a class="btn btn-primary" href="${pageContext.request.contextPath}/book/toAddBook">新增</a>
         </div>
+
+        <div class="col-md-4 row form-inline" style="float: right">
+            <%--style="float: right" 向右浮动 --%>
+            <form action="${pageContext.request.contextPath}/book/allBook" method="post">
+                <input type="text" name="bookName" class="form-control" placeholder="请输入书籍名称"/>
+                <input type="submit" value="查询" class="btn btn-primary">
+            </form>
+        </div>
     </div>
 
     <div class="row clearfix">
@@ -53,10 +61,10 @@
                         <td>${book.getBookName()}</td>
                         <td>${book.getBookCounts()}</td>
                         <td>${book.getDetail()}</td>
-<%--                        <td>--%>
-<%--                            <a href="${pageContext.request.contextPath}/book/toUpdateBook?id=${book.getBookID()}">更改</a> |--%>
-<%--                            <a href="${pageContext.request.contextPath}/book/del/${book.getBookID()}">删除</a>--%>
-<%--                        </td>--%>
+                        <td>
+                            <a href="${pageContext.request.contextPath}/book/toUpdateBook?id=${book.getBookId()}">更改</a> |
+                            <a href="${pageContext.request.contextPath}/book/deleteBook/${book.getBookId()}">删除</a>
+                        </td>
                     </tr>
                 </c:forEach>
                 </tbody>

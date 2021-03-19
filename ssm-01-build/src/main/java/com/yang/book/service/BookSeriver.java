@@ -14,5 +14,5 @@ public interface BookSeriver {
 
     Books findById(Integer id);
 
-    List<Books> findAll();
+    List<Books> findAll(Books books);
 }
